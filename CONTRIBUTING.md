@@ -14,8 +14,8 @@ If you've attempted any fixes please include that information as well. We also w
 pull requests with fixed code, but please still include the above information with 
 your pull request.
 
-If you'd like to suggest a package to add to the curriculum you may either file a 
-Github Issue or email [Sierra Brown](mailto:sierra@millionconcepts.com). 
+If you'd like to suggest a package to add to the curriculum you may either [file a Github 
+Issue](https://github.com/MillionConcepts/knowing-the-sky/issues) or email [Sierra Brown](mailto:sierra@millionconcepts.com). 
 
 If you are affiliated with a tribe and would like to share a native knowledge practice 
 or oral tradition for possible inclusion in this project please reach out to [Sierra 
