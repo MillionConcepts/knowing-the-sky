@@ -33,7 +33,10 @@ Dr. Sierra V. Brown is a registered member of the Shinnecock Tribe of Long Islan
 
 #### Michael St. Clair, Co-Investigator
 
-Dr. Michael St. Clair is CTO of Million Concepts, LLC. He is an exceptional software engineer and his background in Theater and Performance Studies has made him a talented teacher and communicator with strong expertise in course design.
+Dr. Michael St. Clair is CTO of Million Concepts, LLC. He is an exceptional software 
+engineer and his background in performance studies has made him a talented teacher and 
+communicator 
+with strong expertise in course design.
 
 #### Chase Million, Co-Investigator
 
