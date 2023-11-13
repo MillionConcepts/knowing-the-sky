@@ -4,6 +4,6 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+- file: 1_gathering_sky_draft.ipynb
+- file: 2_ordering_sky_draft.ipynb
+- file: 3_drawing_sky_draft.ipynb

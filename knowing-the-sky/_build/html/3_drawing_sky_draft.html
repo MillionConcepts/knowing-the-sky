@@ -1,0 +1,1164 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>coordinate transformations &#8212; Knowing the Sky</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=365ca57ee442770a23c6" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=365ca57ee442770a23c6"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '3_drawing_sky_draft';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Lesson 2: Ordering the Sky" href="2_ordering_sky_draft.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Knowing the Sky - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Knowing the Sky - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1_gathering_sky_draft.html">Lesson 1: Gathering the Sky</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_ordering_sky_draft.html">Lesson 2: Ordering the Sky</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">coordinate transformations</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/millionconcepts/knowing-the-sky" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/millionconcepts/knowing-the-sky/issues/new?title=Issue%20on%20page%20%2F3_drawing_sky_draft.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/3_drawing_sky_draft.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>coordinate transformations</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-equivalent-systems-and-representations">transforming ‘equivalent’ systems and representations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-non-equivalent-systems">transforming ‘non-equivalent’ systems</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">AltAz</span><span class="p">,</span> <span class="n">EarthLocation</span><span class="p">,</span> <span class="n">SkyCoord</span>
+<span class="kn">import</span> <span class="nn">astropy.time</span> <span class="k">as</span> <span class="nn">at</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.min_rows&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="o">%</span><span class="k">matplotlib</span> qt
+</pre></div>
+</div>
+</div>
+</div>
+<section id="coordinate-transformations">
+<h1>coordinate transformations<a class="headerlink" href="#coordinate-transformations" title="Permalink to this heading">#</a></h1>
+<p>The version of the Bright Star Catalog we fetched through Vizier defines star coordinates in ‘J2000’. ‘J2000’ is a vague term: it can refer to any coordinate system referenced to the celestial equator and equinox of January 1st, 2000 TT (Terrestrial Time – like Atomic Time but with a small offset), and there are several such systems. <em>todo: more about transforming time systems? this level of precision is not actually important for this problem…</em> Usually, however, it refers to an equatorial coordinate system whose origin is at the barycenter of the Solar System, and is interchangeable for most purposes with the International Celestial Reference System (ICRS). <strong>todo, maybe: do i need to talk about what an equatorial coordinate system is? does it matter?</strong></p>
+<p>An equatorial system is a type of inertial coordinate system. Inertial coordinate systems are acceleration-independent and very useful for specifying precise positions and orientations of objects in different accelerational frames. However, body-fixed systems, which move with a particular object such as a planet, and topocentric systems, which are relative to a particular observer, are often more useful for determining <em>apparent</em> positions and trajectories of objects.</p>
+<p>Transforming coordinates into other systems is one of the most common tasks in computing for planetary science and astronomy. The scientific Python ecosystem offers many tools to facilitate this task, and some of the most straightforward ones live in <code class="docutils literal notranslate"><span class="pre">astropy</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s read our cleaned-up version of the Bright Star Catalog back in.</span>
+<span class="n">bsc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bright_star_directory/bsc_clean.csv&#39;</span><span class="p">)</span>
+<span class="c1"># then, let&#39;s make a SkyCoord object. SkyCoord is astropy&#39;s core class</span>
+<span class="c1"># for representing the coordinates of celestial objects.</span>
+<span class="c1"># You can specify other coordinate systems when you initialize a SkyCoord,</span>
+<span class="c1"># but ICRS is the default, which is convenient for us here.</span>
+<span class="n">star_coords</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span>
+    <span class="n">ra</span><span class="o">=</span><span class="n">bsc</span><span class="p">[</span><span class="s1">&#39;RAJ2000&#39;</span><span class="p">],</span> <span class="n">dec</span><span class="o">=</span><span class="n">bsc</span><span class="p">[</span><span class="s1">&#39;DEJ2000&#39;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;deg&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># let&#39;s read our cleaned-up version of the Bright Star Catalog back in.</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">bsc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bright_star_directory/bsc_clean.csv&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># then, let&#39;s make a SkyCoord object. SkyCoord is astropy&#39;s core class</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># for representing the coordinates of celestial objects.</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># You can specify other coordinate systems when you initialize a SkyCoord,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># but ICRS is the default, which is convenient for us here.</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">star_coords</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">ra</span><span class="o">=</span><span class="n">bsc</span><span class="p">[</span><span class="s1">&#39;RAJ2000&#39;</span><span class="p">],</span> <span class="n">dec</span><span class="o">=</span><span class="n">bsc</span><span class="p">[</span><span class="s1">&#39;DEJ2000&#39;</span><span class="p">],</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;deg&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="p">)</span>
+
+<span class="nn">File ~/mambaforge/envs/topst/lib/python3.10/site-packages/pandas/io/parsers/readers.py:948,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">    </span><span class="mi">935</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">936</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">937</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">944</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">945</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">946</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">948</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
+
+<span class="nn">File ~/mambaforge/envs/topst/lib/python3.10/site-packages/pandas/io/parsers/readers.py:611,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">608</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">610</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">611</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">613</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">614</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~/mambaforge/envs/topst/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1448,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1445</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1447</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1448</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~/mambaforge/envs/topst/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1705,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1703</span>     <span class="k">if</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1704</span>         <span class="n">mode</span> <span class="o">+=</span> <span class="s2">&quot;b&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1705</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="o">=</span> <span class="n">get_handle</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1706</span>     <span class="n">f</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1707</span>     <span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1708</span>     <span class="n">encoding</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1709</span>     <span class="n">compression</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;compression&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1710</span>     <span class="n">memory_map</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;memory_map&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1711</span>     <span class="n">is_text</span><span class="o">=</span><span class="n">is_text</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1712</span>     <span class="n">errors</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;encoding_errors&quot;</span><span class="p">,</span> <span class="s2">&quot;strict&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1713</span>     <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;storage_options&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1714</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1715</span> <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">   </span><span class="mi">1716</span> <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="o">.</span><span class="n">handle</span>
+
+<span class="nn">File ~/mambaforge/envs/topst/lib/python3.10/site-packages/pandas/io/common.py:863,</span> in <span class="ni">get_handle</span><span class="nt">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">858</span> <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">859</span>     <span class="c1"># Check whether the filename is to be opened in binary mode.</span>
+<span class="g g-Whitespace">    </span><span class="mi">860</span>     <span class="c1"># Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.</span>
+<span class="g g-Whitespace">    </span><span class="mi">861</span>     <span class="k">if</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span> <span class="ow">and</span> <span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">862</span>         <span class="c1"># Encoding</span>
+<span class="ne">--&gt; </span><span class="mi">863</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">864</span>             <span class="n">handle</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">865</span>             <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">866</span>             <span class="n">encoding</span><span class="o">=</span><span class="n">ioargs</span><span class="o">.</span><span class="n">encoding</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">867</span>             <span class="n">errors</span><span class="o">=</span><span class="n">errors</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">868</span>             <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">869</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">870</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">871</span>         <span class="c1"># Binary mode</span>
+<span class="g g-Whitespace">    </span><span class="mi">872</span>         <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span> <span class="n">ioargs</span><span class="o">.</span><span class="n">mode</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;bright_star_directory/bsc_clean.csv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="transforming-equivalent-systems-and-representations">
+<h2>transforming ‘equivalent’ systems and representations<a class="headerlink" href="#transforming-equivalent-systems-and-representations" title="Permalink to this heading">#</a></h2>
+<p>Transforming between inertial frames that are simply oriented differently is very easy in <code class="docutils literal notranslate"><span class="pre">astropy</span></code>. You can translate ICRS to systems like Galactic coordinates (another inertial coordinate system centered on the SSB, but with ‘up’ towards the center of the Milky Way) with no trouble at all. Similarly, if you’d prefer coordinates in Cartesian rather than spherical representation to make some calculation easier, you don’t need to provide anything additional to <code class="docutils literal notranslate"><span class="pre">astropy</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">star_coords</span><span class="o">.</span><span class="n">galactic</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">star_coords</span><span class="o">.</span><span class="n">cartesian</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="transforming-non-equivalent-systems">
+<h2>transforming ‘non-equivalent’ systems<a class="headerlink" href="#transforming-non-equivalent-systems" title="Permalink to this heading">#</a></h2>
+<p>Transforming inertial coordinates into topocentric or body-fixed coordinates, however, requires more information. Because these systems take body position and acceleration into account, you need a reliable ephemeris, a specific point in time, and, for topocentric systems, observer location relative to body center.</p>
+<p>Because we care about the ‘position of rising’ relative to an Earth-based observer, we will need to use a topocentric coordinate system: specifically, an altitude-azimuth system.</p>
+<p><strong>todo: what do you do if you need more precision? what about non-Earth bodies?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we&#39;ll want to check the position of the sun and moon to look for &#39;betweenness&#39;.</span>
+<span class="c1"># we&#39;ll also later want to filter daylight times.</span>
+
+<span class="c1"># TODO: explanation of &#39;solstice&#39; definition related to fullness, c.f. our discussion,</span>
+<span class="c1"># pending also discussion with Shandin re: Salish perceptions of the relationship</span>
+<span class="c1"># or lack thereof between the winter solstice and the full moon</span>
+
+<span class="c1"># there are lots of ways to get data on the position of objects in the Solar System; </span>
+<span class="c1"># one of the best is to query the JPL Horizons service. It has a solid web interface, </span>
+<span class="c1"># but multiple wrappers for it also exist that make it easier to get data into Python.</span>
+<span class="c1"># our favorite is called lhorizon.</span>
+<span class="kn">from</span> <span class="nn">lhorizon</span> <span class="kn">import</span> <span class="n">LHorizon</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seattle_coords</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">47.6062</span><span class="p">,</span> 
+    <span class="s1">&#39;lon&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">360</span> <span class="o">-</span> <span class="mf">122.3321</span><span class="p">),</span>
+    <span class="s1">&#39;elevation&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="c1"># 399 is the horizons code for Earth</span>
+    <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="mi">399</span>
+<span class="p">}</span>
+<span class="c1"># this means: &#39;give me times starting at Jan 1 1900 and ending at Jan 20 1901, at 1-hour intervals&#39;.</span>
+<span class="c1"># we&#39;re getting a little more than a year to give us some numerical &#39;room&#39; later.</span>
+<span class="n">epochs</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;start&#39;</span><span class="p">:</span> <span class="s1">&#39;1900-01-01&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;stop&#39;</span><span class="p">:</span> <span class="s1">&#39;1901-01-20&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;step&#39;</span><span class="p">:</span> <span class="s1">&#39;1m&#39;</span>
+<span class="p">}</span>
+<span class="c1"># at this point, we only care about rising and setting times, so we&#39;re turning on the </span>
+<span class="c1"># &#39;rise_transit_set&#39; flag, which causes Horizons to only return times when a body...</span>
+<span class="c1"># rises, transits, or sets.</span>
+<span class="n">query_options</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;rise_transit_set&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+
+<span class="c1"># initialize a LHorizon object. this works something like the Vizier object</span>
+<span class="c1"># we saw in the last notebook -- it represents a query, or a potential</span>
+<span class="c1"># query, to the Horizons service.</span>
+
+<span class="c1"># 10 is the Horizons code for the Sun.</span>
+<span class="c1"># calling the .dataframe() method automatically queries Horizons</span>
+<span class="c1"># and formats its response as a pandas dataframe. .table() provides</span>
+<span class="c1"># a more compact representation but does not have all the fields we&#39;ll need.</span>
+<span class="c1"># this query will probably take 15-30 seconds.</span>
+<span class="n">sun_positions</span> <span class="o">=</span> <span class="n">LHorizon</span><span class="p">(</span>
+    <span class="n">target</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">seattle_coords</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">query_options</span><span class="o">=</span><span class="n">query_options</span>
+<span class="p">)</span><span class="o">.</span><span class="n">dataframe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a pandas datetime column so we can do math with it</span>
+<span class="n">sun_positions</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sun_positions</span><span class="p">[</span><span class="s1">&#39;Date__(UT)__HR:MN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">)</span>
+<span class="c1"># Horizons returns UTC times, so we&#39;ll also offset that by 7 hours.</span>
+<span class="n">sun_positions</span><span class="p">[</span><span class="s1">&#39;local&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">sun_positions</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="c1"># in rise-transit-set mode, Horizons uses the &#39;interference_flag&#39; column to note</span>
+<span class="c1"># which event has happened. to get sunrises, we&#39;ll filter the dataframe for just </span>
+<span class="c1"># &#39;r&#39; (rising).</span>
+<span class="n">sunrises</span> <span class="o">=</span> <span class="n">sun_positions</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">sun_positions</span><span class="p">[</span><span class="s1">&#39;interference_flag&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now let&#39;s do the same thing with the Moon. </span>
+<span class="c1"># this query will also probably take about 15-30 seconds.</span>
+<span class="n">moon_positions</span> <span class="o">=</span> <span class="n">LHorizon</span><span class="p">(</span>
+    <span class="c1"># 301 is the Horizons code for the Moon</span>
+    <span class="n">target</span><span class="o">=</span><span class="mi">301</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="n">seattle_coords</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">query_options</span><span class="o">=</span><span class="n">query_options</span>
+<span class="p">)</span><span class="o">.</span><span class="n">dataframe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">moon_positions</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">moon_positions</span><span class="p">[</span><span class="s1">&#39;Date__(UT)__HR:MN&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;datetime64[ns]&#39;</span><span class="p">)</span>
+<span class="n">moon_positions</span><span class="p">[</span><span class="s1">&#39;local&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">moon_positions</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">hours</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">moonrises</span> <span class="o">=</span> <span class="n">moon_positions</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">moon_positions</span><span class="p">[</span><span class="s1">&#39;interference_flag&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;r&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># in contemporary Western astronomy, &#39;winter solstice&#39; has a distinct technical definition.</span>
+<span class="c1"># but -- across many cultures -- practical astronomy tends to detect the winter solstice</span>
+<span class="c1"># partly by the southernmost sunrise. (note that true south is a 180-degree azimuth.)</span>
+<span class="c1"># Even the precision of Horizons doesn&#39;t give us an </span>
+<span class="c1"># exact date based on this -- look at how the rate of change in rising azimuth bounces </span>
+<span class="c1"># around due to quantization noise:</span>
+<span class="n">rising_azimuth_change</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">sunrises</span><span class="p">[</span><span class="s1">&#39;Azi_(a-app)&#39;</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rising_azimuth_change</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rising_azimuths</span> <span class="o">=</span> <span class="n">sunrises</span><span class="p">[</span><span class="s1">&#39;Azi_(a-app)&#39;</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">rising_azimuths</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># traditional methods often focused on grouping or counting days around</span>
+<span class="c1"># extreme positions of the sunrise. we can emulate that with a moving average.</span>
+<span class="c1"># surprisingly, Python doesn&#39;t offer a lot of</span>
+<span class="c1"># out-of-the-box methods for computing averages. building lowpass </span>
+<span class="c1"># filters with scipy.signal or using convolution techniques are</span>
+<span class="c1"># common options, but here, we&#39;ll use the pd.Series.rolling() method,</span>
+<span class="c1"># which yields windows of a specified size. You can then do various</span>
+<span class="c1"># mathematical operations on those windows -- including simple averages.</span>
+<span class="c1"># the first values will be NaN because the window isn&#39;t full yet --</span>
+<span class="c1"># but that&#39;s ok for our current purpose.</span>
+<span class="n">rolling_azimuth</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">sunrises</span><span class="p">[</span><span class="s1">&#39;Azi_(a-app)&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">smoothed_azimuth</span> <span class="o">=</span> <span class="n">rolling_azimuth</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this has gotten rid of the worst of the quantization noise, </span>
+<span class="c1"># especially in periods when the azimuth isn&#39;t changing much...</span>
+<span class="c1"># which is to say the summer and winter solstices.</span>
+<span class="n">smoothed_azimuth_change</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">smoothed_azimuth</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">smoothed_azimuth_change</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we can now go ahead and pick out reasonable-by-human-scale</span>
+<span class="c1"># dates for the solstices by looking for the minima of this array.</span>
+<span class="c1"># np.argsort is an extremely powerful function that gives you the indices</span>
+<span class="c1"># that _would_ sort the array. we can use it to get indices for the</span>
+<span class="c1"># two minima.</span>
+<span class="n">azimuth_change_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">smoothed_azimuth_change</span><span class="p">)</span>
+<span class="n">azimuth_change_indices</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># because our moving average window didn&#39;t &#39;fill up&#39; immediately, </span>
+<span class="c1"># we can expect these indices to be shifted by about half the size of</span>
+<span class="c1"># the window from the &#39;true&#39; minima. 7 is close enough to 15 / 2:</span>
+<span class="n">solstice_indices</span> <span class="o">=</span> <span class="n">azimuth_change_indices</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">-</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># and then we can select rows from our sunrise table with them:</span>
+<span class="n">solar_solstices</span> <span class="o">=</span> <span class="n">sunrises</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">solstice_indices</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># the Sun is not necessarily the most important thing, though.</span>
+<span class="c1"># TODO: brief explanation of lunar calendars, which we&#39;ll talk more about later...</span>
+<span class="c1"># the full Moon nearest this position marks the &#39;real&#39; winter solstice.</span>
+<span class="c1"># the &#39;Illu%&#39; column of the moonrises table tells us how full the Moon is</span>
+<span class="c1"># at each moonrise. 0 would be a perfectly new moon; 100 a perfectly full moon.</span>
+
+<span class="c1"># full Moons and the solstices have a special relationship. let&#39;s take a look at it</span>
+<span class="c1"># before we select the specific days. we&#39;ll do that by using some features of matplotlib</span>
+<span class="c1"># to compare and color series.</span>
+
+<span class="c1"># moonrises and sunrises don&#39;t perfectly line up in time, of course, but we&#39;ve got some tricks</span>
+<span class="c1"># with matplotlib. matplotlib will happily plot things with different numbers of points,</span>
+<span class="c1"># which means that whenever you&#39;ve got directly-comparable axis -- in this case, local time --</span>
+<span class="c1"># you can use it to correctly align different chunks of data to match one another.</span>
+<span class="c1"># better yet, matplotlib is aware of datetimes, so we can put dates right on this axis.</span>
+<span class="c1"># it will automatically select ticks that will work for both time series.</span>
+<span class="o">%</span><span class="k">matplotlib</span> qt
+<span class="c1"># use a black line for lunar azimuth</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">moonrises</span><span class="p">[</span><span class="s1">&#39;local&#39;</span><span class="p">],</span> <span class="n">moonrises</span><span class="p">[</span><span class="s1">&#39;Azi_(a-app)&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="c1"># use a red line for solar azimuth</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sunrises</span><span class="p">[</span><span class="s1">&#39;local&#39;</span><span class="p">],</span> <span class="n">sunrises</span><span class="p">[</span><span class="s1">&#39;Azi_(a-app)&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="c1"># we&#39;re also going to show the phase of the moon at each rise using the plt.scatter function.</span>
+<span class="c1"># this will enable us to indicate phase by specifying a color scale, which plt.plot can&#39;t do.</span>
+<span class="c1"># greener means fuller; bluer means newer.</span>
+<span class="c1"># you&#39;ll note that the rising azimuths of the moon and sun, at the full moon, </span>
+<span class="c1"># are most similar near the equinoxes and most different at the solstices.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">moonrises</span><span class="p">[</span><span class="s1">&#39;local&#39;</span><span class="p">],</span> <span class="n">moonrises</span><span class="p">[</span><span class="s1">&#39;Azi_(a-app)&#39;</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">moonrises</span><span class="p">[</span><span class="s1">&#39;Illu%&#39;</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;winter&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># keeping this in mind, let&#39;s go ahead and pick the &#39;real&#39; dates of the solstices --</span>
+<span class="c1"># the full moons nearest the summer and winter solstice.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change in lunar fullness -- this will be positive as the moon approaches full,</span>
+<span class="c1"># and negative as it recedes from full. we&#39;re appending a large negative number</span>
+<span class="c1"># to prevent np.diff from truncating the series -- we&#39;ll filter it later.</span>
+<span class="n">fullness_change</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">moon_positions</span><span class="p">[</span><span class="s1">&#39;Illu%&#39;</span><span class="p">],</span> <span class="n">append</span><span class="o">=-</span><span class="mi">9999</span><span class="p">)</span>
+<span class="c1"># now, we&#39;ll pick the times that this changes from positive to negative.</span>
+<span class="n">fullness_switch</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">fullness_change</span><span class="p">))</span>
+<span class="n">full_moon_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">fullness_switch</span> <span class="o">==</span> <span class="o">-</span><span class="mi">2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">full_moons</span> <span class="o">=</span> <span class="n">moon_positions</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">full_moon_indices</span><span class="p">]</span>
+<span class="c1"># let&#39;s validate this real quick by making sure the Moon is quite full at these times:</span>
+<span class="n">full_moons</span><span class="p">[</span><span class="s1">&#39;Illu%&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>  <span class="c1"># great.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">solar_solstices</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day_of_year</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now let&#39;s pick the temporally-closest days to the solar solstices by simply subtracting dates</span>
+<span class="c1"># and picking the smallest offset:</span>
+<span class="n">winter_solstice_date</span> <span class="o">=</span> <span class="n">solar_solstices</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">lunar_offset</span> <span class="o">=</span> <span class="n">winter_solstice_date</span> <span class="o">-</span> <span class="n">full_moons</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
+<span class="c1"># so, for this year, the lunar winter solstice is on January 4th.</span>
+<span class="c1"># it&#39;s in the next year on the Gregorian solar calendar, but</span>
+<span class="c1"># that&#39;s not the calendar that matters here.</span>
+<span class="n">full_moons</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">lunar_offset</span> <span class="o">==</span> <span class="n">lunar_offset</span><span class="o">.</span><span class="n">min</span><span class="p">()]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now that we know...</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO: rewrite to get the whole sun position table</span>
+
+<span class="c1"># the table that Horizons gave us has a lot of columns. However, the only ones</span>
+<span class="c1"># we actually care about in this case are &#39;time&#39; and &#39;alt&#39; (altitude).</span>
+<span class="n">sun_positions</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># # let&#39;s use the predicate indexing trick we discussed in the last notebook to pick</span>
+<span class="c1"># # just times when the Sun has altitude &lt; 0.</span>
+<span class="c1"># night = sun_positions.loc[sun_positions[&#39;alt&#39;] &lt; 0]</span>
+<span class="c1"># night[[&#39;time&#39;, &#39;alt&#39;]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now, we can use the &#39;time&#39; series from the night table to construct coordinate frames for</span>
+<span class="c1"># Seattle in each hour in the year. </span>
+<span class="c1"># astropy really likes to use its own objects, and the object it likes to use to define</span>
+<span class="c1"># time is astropy.time.Time.</span>
+<span class="c1"># fortunately, it&#39;s _really_ easy to make a Time object here, because Time objects can </span>
+<span class="c1"># be constructed directly from pandas datetime Series.</span>
+<span class="c1"># note that astropy.time.Time can interpret a wide variety of other time formats;</span>
+<span class="c1"># also note that its default scale is UTC (which is the default time scale for this type)</span>
+<span class="c1"># of Horizons query, so, great.</span>
+<span class="n">times</span> <span class="o">=</span> <span class="n">at</span><span class="o">.</span><span class="n">Time</span><span class="p">(</span><span class="n">night</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">])</span>
+<span class="c1"># and just like that, we have an astropy.time.Time object representing every hour in the year.</span>
+<span class="n">times</span><span class="p">[</span><span class="mi">100</span><span class="p">:</span><span class="mi">102</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># just like astropy likes its own Time objects, it also likes its own location objects. In this</span>
+<span class="c1"># case, the appropriate one is astropy.coordinates.EarthLocation.</span>
+<span class="n">seattle</span> <span class="o">=</span> <span class="n">EarthLocation</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="n">seattle_coords</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">],</span> <span class="n">lon</span><span class="o">=</span><span class="n">seattle_coords</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">])</span>
+<span class="n">seattle</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now we can initialize an altitude-azimuth coordinate frame for each of these times.</span>
+<span class="c1"># this will provide the specificity astropy needs in order to convert inertial to </span>
+<span class="c1"># topocentric coordinates.</span>
+
+<span class="c1"># a note: under the hood, astropy uses IERS data to perform these transformations. </span>
+<span class="c1"># see: https://docs.astropy.org/en/stable/utils/iers.html#utils-iers</span>
+
+<span class="c1"># just like Time can contain many times, astropy is happy to make a coordinate frame</span>
+<span class="c1"># defined at multiple times or locations -- but because we only have one set of </span>
+<span class="c1"># initial coordinates, it&#39;ll fail if we try to actually perform the transformation.</span>
+<span class="c1"># so let&#39;s instead make a list of coordinate frames and use them to compute </span>
+<span class="c1"># altitude-azimuth coordinates for each star at each time.</span>
+<span class="c1"># this will probably take 30-60 seconds.</span>
+<span class="n">frames</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">times</span><span class="p">:</span>
+    <span class="n">frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">AltAz</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">seattle</span><span class="p">,</span> <span class="n">obstime</span><span class="o">=</span><span class="n">time</span><span class="p">))</span>
+<span class="n">star_altaz</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">frame</span> <span class="ow">in</span> <span class="n">frames</span><span class="p">:</span>
+    <span class="c1"># note that on each iteration of this for loop, we are calculating alt-az coordinates</span>
+    <span class="c1"># for _every star_ at a specific time.</span>
+    <span class="n">star_altaz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">star_coords</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="n">frame</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now, in order to find approximate rising times for each star, we&#39;ll</span>
+<span class="c1"># stack the altitude values into a big array...</span>
+
+<span class="n">alt_arrays</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># grab the numerical altitude values from each list of coordinates as an array:</span>
+<span class="k">for</span> <span class="n">altaz</span> <span class="ow">in</span> <span class="n">star_altaz</span><span class="p">:</span>
+    <span class="c1"># &#39;value&#39; strips the special astropy information off and gives you just the numbers</span>
+    <span class="n">alt_arrays</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">altaz</span><span class="o">.</span><span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="c1"># np.vstack means &#39;stack these arrays vertically.&#39; This will give us</span>
+<span class="c1"># an array oriented differently from our catalog table, so we&#39;ll take its</span>
+<span class="c1"># transpose with .T -- meaning just &#39;turn it sideways&#39; -- to recover the</span>
+<span class="c1"># original orientation. We&#39;ll end up with an array where each column</span>
+<span class="c1"># represents a specific time, and each row represents a specific star,</span>
+<span class="c1"># and the array values represent that star&#39;s altitude at that time.</span>
+<span class="n">altitudes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">alt_arrays</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="n">altitudes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now our array rows correspond to our table rows.</span>
+<span class="n">altitudes</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">bsc</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we can now conveniently filter stars that are _never_ visible at night </span>
+<span class="c1"># from this point on the Earth. np.max tells us the maximum value of</span>
+<span class="c1"># an array, and the axis=1 argument means &#39;do this along rows&#39; -- so in other</span>
+<span class="c1"># words, each star&#39;s maximum altitude.</span>
+<span class="n">max_altitudes</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">altitudes</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">max_altitudes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># then we&#39;ll use the fancy indexing trick again to reject any that never</span>
+<span class="c1"># rise above the horizon. we&#39;ll also retain this in the never_visible</span>
+<span class="c1"># variable so that we can filter other stuff with it later.</span>
+<span class="c1"># TODO: what about circumpolar stars? are they rejected too?</span>
+<span class="n">never_visible</span> <span class="o">=</span> <span class="n">max_altitudes</span> <span class="o">&lt;</span> <span class="mi">0</span>
+<span class="n">altitudes</span> <span class="o">=</span> <span class="n">altitudes</span><span class="p">[</span><span class="o">~</span><span class="n">never_visible</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we&#39;ll now find the times that each star rises by looking for points where the</span>
+<span class="c1"># altitude goes from below 0 to above 0. First, we&#39;ll make an array that just tells us whether </span>
+<span class="c1"># each point is greater or less than 0.</span>
+<span class="c1"># np.sign returns -1 for negative numbers, 0 for 0, and 1 for positive numbers.</span>
+<span class="n">above_horizon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">altitudes</span><span class="p">)</span>
+<span class="n">above_horizon</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now we&#39;ll find the points where it changes using np.diff.</span>
+<span class="c1"># np.diff gives the first discrete difference along the specified</span>
+<span class="c1"># axis. In some cases, this is a good proxy for the first derivative</span>
+<span class="c1"># of a function. Here we&#39;re just using it to detect change.</span>
+<span class="c1"># we&#39;re going to prepend a large negative number to it so that</span>
+<span class="c1"># we end up with an array of the same shape (otherwise np.diff will truncate it).</span>
+<span class="c1"># we&#39;ll reject that number in the next step, so this is just a little</span>
+<span class="c1"># trick to make the array shapes match up.</span>
+<span class="n">above_horizon_change</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">above_horizon</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">prepend</span><span class="o">=-</span><span class="mi">9999</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -2 implies that a star set; 2 implies that a star rose.</span>
+<span class="n">rising_points</span> <span class="o">=</span> <span class="n">above_horizon_change</span> <span class="o">==</span> <span class="mi">2</span>
+<span class="c1"># let&#39;s validate our method a little bit -- </span>
+<span class="c1"># if it worked, successive points for a single star should be </span>
+<span class="c1"># separated by roughly 24 hours -- possibly with some slop for times</span>
+<span class="c1"># that a star was only momentarily visible due to seasonal change, etc.</span>
+
+<span class="c1"># np.nonzero can help us do that; it gives us the coordinates of</span>
+<span class="c1"># all non-zero (or True) values in an array.</span>
+<span class="n">star_number</span><span class="p">,</span> <span class="n">rising</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">rising_points</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># that looks pretty solid.</span>
+<span class="c1"># TODO: possibly need to handle stars that are _always_ up after the sun is down?</span>
+<span class="n">np</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">rising</span><span class="p">[</span><span class="n">star_number</span> <span class="o">==</span> <span class="mi">80</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now we&#39;ll create an azimuth array using the same technique we used to make the altitude array.</span>
+<span class="n">az_arrays</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">altaz</span> <span class="ow">in</span> <span class="n">star_altaz</span><span class="p">:</span>
+    <span class="n">az_arrays</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">altaz</span><span class="o">.</span><span class="n">az</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
+<span class="n">azimuths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">(</span><span class="n">az_arrays</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="n">azimuths</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># and we&#39;ll reject invisible stars like we did for the altitude array:</span>
+<span class="n">azimuths</span> <span class="o">=</span> <span class="n">azimuths</span><span class="p">[</span><span class="o">~</span><span class="n">never_visible</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># and now we can use the rising points to make a mask for this array --</span>
+<span class="c1"># specifically, we want to mask every azimuth value that&#39;s _not_ </span>
+<span class="c1"># associated with a rising event; hence the ~ (not) operator.</span>
+<span class="n">masked_azimuths</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_array</span><span class="p">(</span><span class="n">azimuths</span><span class="p">,</span> <span class="n">mask</span><span class="o">=~</span><span class="n">rising_points</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">masked_azimuths</span><span class="p">[</span><span class="mi">5</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">masked_azimuths</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># what does &#39;same place&#39; mean? what &#39;same&#39; is cannot be blithely assumed,</span>
+<span class="c1"># nor can &#39;place&#39;.</span>
+<span class="c1"># but let&#39;s see what we can do with quantities by taking a look at the </span>
+<span class="c1"># maximum variation in rising azimuth for each star.</span>
+<span class="c1"># TODO: is this problematic in cases where a star barely comes noticeably over</span>
+<span class="c1"># the horizon in some parts of the year?</span>
+<span class="n">rising_azimuth_ranges</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1"># a for loop over a numpy array always iterates over its last axis -- so each</span>
+<span class="c1"># iteration of this loop looks at a different star, which is what we want.</span>
+<span class="k">for</span> <span class="n">star</span> <span class="ow">in</span> <span class="n">masked_azimuths</span><span class="p">:</span>
+    <span class="c1"># np.ma.ptp gives the difference between the minimum and maximum values in an</span>
+    <span class="c1"># array. in this case, each array is a 1x4374 array containing azimuth values </span>
+    <span class="c1"># -- mostly masked! np.ma.ptp will respect the mask and give us only the unmasked values.</span>
+    <span class="c1"># if all the values are masked, it&#39;ll just give us &#39;masked&#39;, which we&#39;ll filter later.</span>
+    <span class="c1"># TODO: these are circumpolar stars, which we maybe want to reject out of hand</span>
+    <span class="c1"># before this...</span>
+    <span class="n">rising_azimuth_ranges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">ptp</span><span class="p">(</span><span class="n">star</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s make a histogram of these.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">rising_azimuth_ranges</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">128</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># it looks like there are a few outliers on the bottom end. let&#39;s see which stars have</span>
+<span class="c1"># &lt; 12 degrees of rising azimuthal variation.</span>
+<span class="n">star_candidates</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">rising_azimuth_ranges</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># now, let&#39;s filter our catalog using the same invisible star mask</span>
+<span class="c1"># we used for our altitude and azimuth arrays, so that everything is aligned:</span>
+<span class="n">bsc_visible</span> <span class="o">=</span> <span class="n">bsc</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="o">~</span><span class="n">never_visible</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># and then pick the candidate stars from the table.</span>
+<span class="n">bsc_candidates</span> <span class="o">=</span> <span class="n">bsc_visible</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">star_candidates</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="2_ordering_sky_draft.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lesson 2: Ordering the Sky</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-equivalent-systems-and-representations">transforming ‘equivalent’ systems and representations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transforming-non-equivalent-systems">transforming ‘non-equivalent’ systems</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Sierra V. Brown, Michael St. Clair, Chase Million, Shandin Pete. This work is supported by NASA grant No. 80NSSC23K0866.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=365ca57ee442770a23c6"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=365ca57ee442770a23c6"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
