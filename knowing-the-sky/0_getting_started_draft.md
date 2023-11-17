@@ -293,37 +293,43 @@ the [Python Standard Library reference](https://docs.python.org/3/library/index.
 
 ### basic operators (PT 3.1, PSL Built-in Types)
 
-`1 == 1`
-`True is True`
-`2 == 1 + 2 - 1 * 1 / 1`
-`"a" in "apple"`
+```python
+1 == 1
+True is True
+2 == 1 + 2 - 1 * 1 / 1
+"a" in "apple"
 `"1" + "1" == "11"`
-`1 < 2`
-`2 > 1`
-`1 <= 1`
-`2 >= 2`
-`5 % 3 == 2`
-`5 // 3 == 1`
+1 < 2
+2 > 1
+1 <= 1
+2 >= 2
+5 % 3 == 2
+5 // 3 == 1
+```
 
 ### variable definitions (PT 3.1)
 
-`x = 1`
-`y = x`
-`x, y = 1, 2`
+```python
+x = 1
+y = x
+x, y = 1, 2
+```
 
 ### built-in types and data structures (PT 3.1, PT 5.1-5.5, PSL Built-in Types)
 
-`int(2) == 2`
-`str(1) == "1"`
-`float(2.1) == 2.1`
-`int(2.1) == 2`
-`[1, 2, 3, 4]`
-`(1, 2, 3, 4)`
-`{'a': 1, 'b': 2}`
-`{1, 2, 3} == set((1, 2, 3, 3, 3))`
-`[1, 2, 3] + [3, 4, 5] == [1, 2, 3, 3, 4, 5]`
-`list({'a': 1, 'b': 2}.keys()) == ['a', 'b']`
-`list({'a': 1, 'b': 2}.values()) == [1, 2]`
+```python
+int(2) == 2
+str(1) == "1"
+float(2.1) == 2.1
+int(2.1) == 2
+[1, 2, 3, 4]
+(1, 2, 3, 4)
+{'a': 1, 'b': 2}
+{1, 2, 3} == set((1, 2, 3, 3, 3))
+[1, 2, 3] + [3, 4, 5] == [1, 2, 3, 3, 4, 5]
+list({'a': 1, 'b': 2}.keys()) == ['a', 'b']
+list({'a': 1, 'b': 2}.values()) == [1, 2]
+```
 
 ### getting and setting attributes and items (PT 3.1, PT 5.1-5.5)
 
