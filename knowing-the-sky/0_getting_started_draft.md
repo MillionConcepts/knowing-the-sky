@@ -287,7 +287,11 @@ Notebook file later if that output gets saved into the file.
 
 ## Required Python Concepts
 
-'PT' refers to sections of the 
+If any of the expressions in one of these code blocks doesn't make sense to you, we recommend
+brushing up on that part of your Python knowledge before starting the course. 
+
+We recommend the official Python documentation as a first reference for fundamental Python concepts,\
+and have included section references on each block. 'PT' refers to sections of the 
 [official Python tutorial](https://docs.python.org/3/tutorial/index.html). 'PSL' refers to sections of
 the [Python Standard Library reference](https://docs.python.org/3/library/index.html#library-index).
 
