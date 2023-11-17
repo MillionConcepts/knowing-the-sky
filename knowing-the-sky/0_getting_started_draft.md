@@ -355,7 +355,7 @@ position.x == 1 is True
 
 ```python
 len([1, 2, 3, 4]) == 4
-abs(-1) == 2
+abs(-1) == 1
 sum((1, 2, 3, 4)) == 10
 any([True, True, False]) is True
 all([True, True, False]) is False
