@@ -7,7 +7,7 @@ _Knowing the Sky_. It includes instructions on:
 * downloading the content from GitHub
 * installing Conda and creating Conda environments
 * running the Jupyter Server
-* working with with a Jupyter Notebook
+* working with a Jupyter Notebook
 
 If you already know how to do all this, you can probably skip this document.
 
@@ -34,7 +34,7 @@ works in a later section.)
 It's important to know that even though you use Jupyter Notebook in a 
 browser, that doesn't mean it has to connect to the Internet. Most people 
 who use Jupyter Notebooks just run the Server "locally" (meaning on their 
-own computers), because it's faster and you don't have to do complicated 
+own computers), because it's faster, and you don't have to do complicated 
 things with accounts and passwords to make it secure. If you follow the 
 instructions in this document, you'll be running Jupyter on your own 
 computer. This means that any changes you make to the Notebook files are 
@@ -92,7 +92,8 @@ use the Conda package manager to download software from a 'channel' called
 conda-forge. 
 
 We prefer a version of Conda called Miniforge. It is provided by the conda-forge
-community. 
+community and includes a fast software management program called `mamba`. We'll
+use `mamba` to install specific dependencies for _Knowing the Sky_ in the next step. 
 [You can get the Miniforge installer from its GitHub page.](https://github.com/conda-forge/miniforge)
 Just go to that page and follow the instructions in the 'Install' section.
 During the installation process, just accept the defaults and say 'yes' to any 
@@ -302,7 +303,7 @@ the [Python Standard Library reference](https://docs.python.org/3/library/index.
 True is True
 2 == 1 + 2 - 1 * 1 / 1
 "a" in "apple"
-`"1" + "1" == "11"`
+"1" + "1" == "11"
 1 < 2
 2 > 1
 1 <= 1
@@ -448,7 +449,7 @@ f"{x}_{len(y)}_{z + 1}" == "1_2_4"
 with open("/path/to/file") as stream:
     text = stream.read()
 
-with open("/path/fo/file", "w") as stream:
+with open("/path/to/file", "w") as stream:
     stream.write("some text")
 ```
 
