@@ -1,15 +1,26 @@
 # Getting Started
 
-This document is intended to teach you everything you'll need to know in 
-order to use the interactive content in _Knowing the Sky_. It includes:
+This document, along with its companion Notebook, is intended to teach 
+you what you'll need to know in order to use the interactive content in 
+_Knowing the Sky_. It includes instructions on:
 
-* how to download all the content from GitHub
-* how to create Python environments
-* how to run the Jupyter Server
-* how to interact with a Jupyter Notebook
-* basic technical background for alll these topics
+* downloading the content from GitHub
+* installing Conda and creating Conda environments
+* running the Jupyter Server
+* working with with a Jupyter Notebook
 
-If you already know how to do all this, you can skip this document.
+If you already know how to do all this, you can probably skip this document.
+
+## Prerequisites
+
+You do not have to be a Python expert to use _Knowing the Sky_, but it does
+assume basic familiarity with core language features. If you'd like to use 
+_Knowing the Sky_ but don't know any Python, we recommend starting with 
+the [official Python tutorial.](https://docs.python.org/3/tutorial/index.html)
+If you're not sure about your level of familiarity, jump to the 
+[list of required concepts](#required-python-concepts) at the bottom of this document,
+which also includes references to sections of the Python tutorial that cover
+each of those concepts.
 
 ## What is Jupyter Notebook?
 
@@ -246,7 +257,7 @@ very popular in applications ranging from data exploration to teaching to IT.
 
 
 ### Downsides of Jupyter Notebook
- 
+
 We love Jupyter Notebooks, but they're not appropriate for every programming 
 task. Here are some considerations to keep in mind if you want to use them
 for other projects:
@@ -273,4 +284,161 @@ other kinds of asynchronous or multithreaded code.
 a bunch of huge images, or something like that, it can cause Notebook to become very
 slow or even freeze -- and it can become slow or even impossible to open that
 Notebook file later if that output gets saved into the file.
- 
+
+## Required Python Concepts
+
+'PT' refers to sections of the 
+[official Python tutorial](https://docs.python.org/3/tutorial/index.html). 'PSL' refers to sections of
+the [Python Standard Library reference](https://docs.python.org/3/library/index.html#library-index).
+
+### basic operators (PT 3.1, PSL Built-in Types)
+
+`1 == 1`
+`True is True`
+`2 == 1 + 2 - 1 * 1 / 1`
+`"a" in "apple"`
+`"1" + "1" == "11"`
+`1 < 2`
+`2 > 1`
+`1 <= 1`
+`2 >= 2`
+`5 % 3 == 2`
+`5 // 3 == 1`
+
+### variable definitions (PT 3.1)
+
+`x = 1`
+`y = x`
+`x, y = 1, 2`
+
+### built-in types and data structures (PT 3.1, PT 5.1-5.5, PSL Built-in Types)
+
+`int(2) == 2`
+`str(1) == "1"`
+`float(2.1) == 2.1`
+`int(2.1) == 2`
+`[1, 2, 3, 4]`
+`(1, 2, 3, 4)`
+`{'a': 1, 'b': 2}`
+`{1, 2, 3} == set((1, 2, 3, 3, 3))`
+`[1, 2, 3] + [3, 4, 5] == [1, 2, 3, 3, 4, 5]`
+`list({'a': 1, 'b': 2}.keys()) == ['a', 'b']`
+`list({'a': 1, 'b': 2}.values()) == [1, 2]`
+
+### getting and setting attributes and items (PT 3.1, PT 5.1-5.5)
+
+```python
+dictionary = {"a": 1, "b": 2}
+dictionary["a"] == 1
+dictionary["b"] = 3
+dictionary["b"] == 3
+
+sequence = [1, 2, 3, 4]
+sequence[0] == 1
+sequence[3] = 2
+sequence[3] == 2
+sequence[0:2] == [1, 2]
+
+# 'position' is an instance of a hypothetical class 
+#  with attributes 'x' and 'y'
+position.x = 1
+position.x == 1 is True
+```
+
+### core built-in functions (PSL Built-in Functions)
+
+```python
+len([1, 2, 3, 4]) == 4
+abs(-1) == 2
+sum((1, 2, 3, 4)) == 10
+any([True, True, False]) is True
+all([True, True, False]) is False
+print('hello world')
+list(range(5)) == [0, 1, 2, 3, 4]
+```
+
+### if-then-else structures (PT 4.1, 4.4)
+
+```python
+x = 1
+if x < 2:
+    print("we will get to this statement")
+else if x == 1:
+    print("this is true, but we won't get to this statement")
+else:
+    print("we definitely won't get to this statement")
+```
+
+### looping structures (PT 4.1-4.4)
+
+```python
+cache == []
+for n in range(10):
+    if n % 2 == 1:
+        continue
+    cache.append(n)
+cache == [0, 2, 4, 6, 8]
+
+i, cache_2 = 0, []
+while len(cache_2) < 5:
+    if i % 2 != 0:
+        cache_2.append(i)
+    i += 1
+cache_2 == [1, 3, 5, 7, 9]
+```
+
+### try-except statements (PT 8.3)
+
+```python
+try:
+    x = {'a': 1}['b']
+except KeyError:
+    print('oops')
+finally:
+    print('all done')
+```
+
+### basic function declarations and calls (PT 4.7-4.8)
+
+```python
+def f(x, y, z=3):
+    return x + y * z
+
+f(1, 2) == 7
+f(y=2, x=1, z=4) == 9
+
+string = "hello"
+string.upper() == "HELLO"
+```
+
+### module imports (PT 6-6.1)
+
+```python
+import statistics
+statistics.mean((1, 3, 5)) == 3
+
+from math import cos
+cos(0) == 1
+
+import datetime as dt
+dt.datetime(2023, 1, 1, 1, 1, 1).month == 1
+```
+
+
+### f-strings (PT 7.1.1)
+
+```python
+x, y, z = 1, "..", 3
+f"{x}_{len(y)}_{z + 1}" == "1_2_4"
+```
+
+### file i/o (PT 7.2)
+
+```python
+with open("/path/to/file") as stream:
+    text = stream.read()
+
+with open("/path/fo/file", "w") as stream:
+    stream.write("some text")
+```
+
