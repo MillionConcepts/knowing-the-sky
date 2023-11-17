@@ -9,3 +9,4 @@ dependencies:
   - matplotlib
   - astropy
   - pandas
+  - jupyter
