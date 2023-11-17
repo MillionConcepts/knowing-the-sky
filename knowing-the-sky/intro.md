@@ -7,7 +7,7 @@ Welcome to *Knowing the Sky*. This is a NASA TOPST (Transform to OPen Science Tr
 *Knowing the Sky* is a self-paced, narrative-driven, interactive textbook. We believe that learning open science skills is more effective in context than in a vacuum. Therefore, each lesson leads learners through exciting hands-on investigations of Native knowledge concepts relating to astronomy and planetary science.
 
 ### Why Native narratives?
-We assert that both Native cosmologies and Western scientific disciplines are legitimate bodies of knowledge. We hope that exposing learners to Native knowledge concepts (mainly from the Shinnecock and Salish tribes) will (1) help break the cycle of numerical underrepresentation of Natives in the STEM workforce and cultural exclusion by demonstrating Native people and culture belong in science and (2) help non-Native users build cultural competencies along with open science skills.
+We assert that both Native cosmologies and Western scientific disciplines are legitimate bodies of knowledge. We hope that exposing learners to Native knowledge concepts (mainly from the Shinnecock and Salish tribes) will (1) help break the cycle of numerical underrepresentation of Natives in the STEM workforce and cultural exclusion by demonstrating Native people and culture continue to contribute to science and (2) help non-Native users build cultural competencies along with open science skills.
 
 ### Who is this for?
 
