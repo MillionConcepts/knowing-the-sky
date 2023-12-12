@@ -4,6 +4,14 @@
 format: jb-book
 root: intro
 chapters:
-- file: 1_gathering_sky_draft.ipynb
-- file: 2_ordering_sky_draft.ipynb
-- file: 3_drawing_sky_draft.ipynb
+- file: 0_Getting_Started.md
+- file: 0_Getting_Started_Companion_Notebook.ipynb
+- file: 1_Gathering_the_Sky.ipynb
+- file: 2_Ordering_the_Sky.ipynb
+- file: 3_Drawing_the_Sky.ipynb
+- file: 4_Naming_the_Sky.ipynb
+- file: 5_Measuring_the_Sky.ipynb
+- file: 6_Seeing_the_Moon.ipynb
+- file: 7_Describing_the_Moon.ipynb
+- file: 8_Sharing_the_Moon.ipynb
+
