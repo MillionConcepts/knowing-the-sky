@@ -11,6 +11,7 @@ figure.constrained_layout.h_pad : 0
 figure.constrained_layout.w_pad : 0
 figure.constrained_layout.use : True
 image.cmap : Greys_r
+image.interpolation : none
 legend.borderaxespad : 0
 legend.borderpad : 0
 legend.handletextpad : 0
