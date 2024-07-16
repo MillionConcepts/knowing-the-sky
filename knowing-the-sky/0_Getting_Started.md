@@ -91,9 +91,10 @@ We think the best way to set up Python for most open-source projects is to
 use the Conda package manager to download software from a 'channel' called
 conda-forge. 
 
-We prefer a version of Conda called Miniforge. It is provided by the conda-forge
-community and includes a fast software management program called `mamba`. We'll
-use `mamba` to install specific dependencies for _Knowing the Sky_ in the next step. 
+We prefer a version of Conda provided by the conda-forge communnity called
+Miniforge. We'll install it now, then use the included software management
+program `conda` to install specific dependencies for _Knowing the Sky_ in the 
+next step. 
 [You can get the Miniforge installer from its GitHub page.](https://github.com/conda-forge/miniforge)
 Just go to that page and follow the instructions in the 'Install' section.
 During the installation process, just accept the defaults and say 'yes' to any 
@@ -131,11 +132,11 @@ distributing and keeping track of changes to files. While you can browse GitHub 
 the web, the most effective way to download code from GitHub is by using
 the `git` application, which makes sure the code is well-organized on your computer
 and lets you reliably keep it up to date. We'll do that by running shell commands 
-to install `git` using `mamba` and then fetch the content with `git`.
+to install `git` using `conda` and then fetch the content with `git`.
 
 #### Where to Run these Commands
 
-On MacOS and Linux, `mamba` is fully compatible with built-in terminal programs. 
+On MacOS and Linux, `conda` is fully compatible with built-in terminal programs. 
 On MacOS, you can just use Terminal, and if you're on Linux, you probably already 
 have a favorite console. On Windows, however, you can't use the built-in 
 Command Prompt or Powershell programs. The Windows Miniforge installer also
@@ -144,7 +145,7 @@ find in your Start Menu. You can use it to run these commands.
 
 #### Install `git`
 
-From the command line, run `mamba install -n base git`. This means "install 
+From the command line, run `conda install -n base git`. This means "install 
 the `git` package into the base conda environment" (we'll explain more about 
 environments in a minute). Say yes to the prompts. Now you have `git`!
 
@@ -178,12 +179,12 @@ It's generally a good practice to make a separate Conda environment for every
 Python project. _Knowing the Sky_ includes a Conda environment file -- a 
 specification for a Conda environment that can run all its content. To 
 create that environment, run `cd knowing-the-sky` to move into the repository
-folder, then run `mamba env create -f environment.yml`. This means 'create a 
+folder, then run `conda env create -f environment.yml`. This means 'create a 
 new Conda environment based on the specification in the environment.yml file.'
-Say yes at any prompts and wait for `mamba` to download and organize the packages.
+Say yes at any prompts and wait for `conda` to download and organize the packages.
 
-After `mamba` finishes, you can then activate the environment by running
-`mamba activate knowing-the-sky`. When you run that command, the `(base)`
+After `conda` finishes, you can then activate the environment by running
+`conda activate knowing-the-sky`. When you run that command, the `(base)`
 in front of your prompt will change to `(knowing-the-sky)`. When an environment
 is active, shell commands you run will execute the versions of the software 
 installed in that environment. **IMPORTANT:** you should always have the
@@ -288,13 +289,14 @@ Notebook file later if that output gets saved into the file.
 
 ## Required Python Concepts
 
-If any of the expressions in one of these code blocks doesn't make sense to you, we recommend
-brushing up on that part of your Python knowledge before starting the course. 
+If any of the expressions in one of these code blocks doesn't make sense to you,
+we recommend brushing up on that part of your Python knowledge before starting 
+the course. 
 
-We recommend the official Python documentation as a first reference for fundamental Python concepts,\
-and have included section references on each block. 'PT' refers to sections of the 
-[official Python tutorial](https://docs.python.org/3/tutorial/index.html). 'PSL' refers to sections of
-the [Python Standard Library reference](https://docs.python.org/3/library/index.html#library-index).
+We recommend the official Python documentation as a first reference for 
+fundamental Python concepts, and have included section references with each 
+block. 'PT' refers to sections of the [official Python tutorial](https://docs.python.org/3/tutorial/index.html). 'PSL' 
+refers to sections of the [Python Standard Library reference](https://docs.python.org/3/library/index.html#library-index).
 
 ### basic operators (PT 3.1, PSL Built-in Types)
 
@@ -374,7 +376,7 @@ list(range(5)) == [0, 1, 2, 3, 4]
 x = 1
 if x < 2:
     print("we will get to this statement")
-else if x == 1:
+elif x == 1:
     print("this is true, but we won't get to this statement")
 else:
     print("we definitely won't get to this statement")
@@ -383,7 +385,7 @@ else:
 ### looping structures (PT 4.1-4.4)
 
 ```python
-cache == []
+cache = []
 for n in range(10):
     if n % 2 == 1:
         continue
