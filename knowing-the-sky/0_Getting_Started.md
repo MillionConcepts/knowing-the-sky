@@ -188,7 +188,7 @@ in front of your prompt will change to `(knowing-the-sky)`. When an environment
 is active, shell commands you run will execute the versions of the software 
 installed in that environment. **IMPORTANT:** you should always have the
 `knowing-the-sky` environment active when you run the Jupyter Server
-to use the `knowing-the-sky` Notebooks. It may not run, or run in expected 
+to use the `knowing-the-sky` Notebooks. It may not run, or may run in unexpected 
 ways, if you don't have `knowing-the-sky` active.
 
 At this point, your installation is complete!

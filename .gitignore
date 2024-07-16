@@ -161,3 +161,6 @@ cython_debug/
 
 *pdfs/
 *bright_star_directory/
+
+# MacOS specific
+*.DS_Store
