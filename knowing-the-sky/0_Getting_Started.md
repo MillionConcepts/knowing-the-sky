@@ -91,7 +91,7 @@ We think the best way to set up Python for most open-source projects is to
 use the Conda package manager to download software from a 'channel' called
 conda-forge. 
 
-We prefer a version of Conda provided by the conda-forge communnity called
+We prefer a version of Conda provided by the conda-forge community called
 Miniforge. We'll install it now, then use the included software management
 program `conda` to install specific dependencies for _Knowing the Sky_ in the 
 next step. 
@@ -115,14 +115,6 @@ command, make sure you pick the "Miniforge3" version of the installer, not "Mini
 Also make sure you pick the version that matches your operating system
 [and CPU architecture](#what-kind-of-architecture-am-i-using).
 4. If you have trouble, there are lots of tutorials on the Internet.
-
-> INTERNAL DRAFT NOTES
-> 1. Conda doesn't currently support Windows on Arm.
-     However, they're planning to do this soon, and I expect they'll do it the
-     time we ship, but we should keep an eye on it.
-> 2. The console command on the page does the processor architecture thing
-     automatically for Mac and Linux, but I'm not sure everyone will use it.
-> 3. TODO: provide links to up-to-date tutorials closer to our ship date.
 
 ### 2. Get the _Knowing The Sky_ content
 
@@ -195,10 +187,6 @@ ways, if you don't have `knowing-the-sky` active.
 At this point, your installation is complete!
 
 ## Using Jupyter Notebook
-
-> DRAFT NOTES:
-> 1. I know it might be a Book or whatever, so the initial subsections here 
-are provisional.
 
 ### Starting Jupyter Server
 
