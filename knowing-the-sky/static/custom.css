@@ -20,7 +20,7 @@
     visibility: visible;
 }
 
-.jp-RenderedHTMLCommon code {
+.jp-RenderedHTMLCommon a code {
     color: var(--jp-content-link-color) !important;
     text-decoration: underline
 }
