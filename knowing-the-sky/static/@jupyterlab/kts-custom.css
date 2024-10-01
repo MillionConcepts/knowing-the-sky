@@ -1,0 +1,27 @@
+/* goes in $CONDA_PREFIX/lib/python<VERSION>/site-packages/notebook/custom/custom.css */
+
+.del-tooltip-wrapper {
+    border-bottom: 1px dotted black;
+    width: fit-content;
+}
+
+.del-tooltip-text {
+    visibility: hidden;
+    width: fit-content;
+    background-color: rgba(128, 128, 128, 0.5);
+    text-align: center;
+    border: 1px solid black;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+}
+
+.del-tooltip-wrapper:hover .del-tooltip-text {
+    visibility: visible;
+}
+
+.jp-RenderedHTMLCommon a code {
+    color: var(--jp-content-link-color) !important;
+    text-decoration: underline
+}
+
