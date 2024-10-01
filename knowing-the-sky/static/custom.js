@@ -1,4 +1,4 @@
-// goes in profile/static/custom/custom.js
+/* for jupyter 7, this needs to be built as an extension; custom.js is no longer supported */
 
 // TODO: add load listener, something like:
 //    define([

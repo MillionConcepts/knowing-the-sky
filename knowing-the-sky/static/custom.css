@@ -1,4 +1,4 @@
-/* goes in profile/static/custom/custom.css */
+/* goes in $CONDA_PREFIX/lib/python<VERSION>/site-packages/notebook/custom/custom.css */
 
 .del-tooltip-wrapper {
     border-bottom: 1px dotted black;
@@ -18,4 +18,9 @@
 
 .del-tooltip-wrapper:hover .del-tooltip-text {
     visibility: visible;
+}
+
+.jp-RenderedHTMLCommon code {
+    color: var(--jp-content-link-color) !important;
+    text-decoration: underline
 }
