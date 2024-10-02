@@ -1,0 +1,7 @@
+comment_magics = false
+cell_markers = '"""'
+
+[formats]
+"knowing-the-sky/" = "ipynb"
+"knowing-the-sky/scripts/" = "py:percent"
+
