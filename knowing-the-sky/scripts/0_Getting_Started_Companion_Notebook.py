@@ -2,7 +2,7 @@
 # jupyter:
 #   jupytext:
 #     cell_markers: '"""'
-#     comment_magics: false
+#     comment_magics: true
 #     text_representation:
 #       extension: .py
 #       format_name: percent
@@ -142,14 +142,14 @@ for i in range(1000):
 
 # this will show you that x is the integer 9, and also tell you about Python ints:
 
-x?
+# x?
 
 # %%
 # if you place '??' after a variable, you'll also be able to see the object's complete 
 # source code, if available. This will show you the full definition of timestwo() from 
 # the earlier cell:
 
-timestwo??
+# timestwo??
 
 # %%
 # if you'd like to print help text so that it sticks around, you can use the built-in
@@ -274,21 +274,21 @@ Finally, it's good to know that Notebook provides some special commands that are
 # of code. For instance, the %time magic measures how long a line of code takes to run:
 
 from time import sleep
-%time sleep(1)
+# %time sleep(1)
 
 # %%
-# %whos prints a table briefly describing all the objects 
+# # %whos prints a table briefly describing all the objects 
 # you've defined or imported in the top-level scope of the Notebook.
 
-%whos
+# %whos
 
 # %%
-# %history prints the contents of all the cells you've run so far, in the order you ran them in.
+# # %history prints the contents of all the cells you've run so far, in the order you ran them in.
 
-%history
+# %history
 
 # %%
-%%time
+# %%time
 # 'cell magics' have a %% prefix and modify, or take instructions from, an entire cell.
 # cell magics always have to go at the very top of a cell.
 # the %%time magic measures how long a whole cell takes to run. 
@@ -301,7 +301,7 @@ for _ in range(10):
 # even assign the output of these commands to variables and use them in Python code.
 # TODO: does this work in windows?
 
-notebooks = !ls *.ipynb
+# notebooks = !ls *.ipynb
 for n in notebooks:
     print(n.replace('.ipynb', ''))
 

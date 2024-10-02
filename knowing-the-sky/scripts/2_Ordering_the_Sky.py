@@ -2,7 +2,7 @@
 # jupyter:
 #   jupytext:
 #     cell_markers: '"""'
-#     comment_magics: false
+#     comment_magics: true
 #     text_representation:
 #       extension: .py
 #       format_name: percent
@@ -316,7 +316,6 @@ Unfortunately, plt.imshow, by default, applies a linear 'stretch' to the image. 
 of values in this image are so wide, it doesn't look like much at all -- almost everything is at the
 lower extreme of the color scale.
 Let's write a little function that uses numpy to range-clip the image so we can look at it more clearly.
-
 """
 
 
@@ -462,7 +461,6 @@ The BSC 'catalog' file has no file extension. However, if you open it in a text 
 
 This means that the BSC catalog is a fixed-width file. (Each cell of table is an equal number of bytes)
 You'd also notice that a lot of the fields appear to run togehter, which meake it somewhat hard to read -- both for humans and for `pandas`. Let's see what happns if we just use the `pandas` `read_fwf` function, which attempts to read a FWFby inferring the width of each field. The `header=None` argument tells `pandas` that the table has no column headers (data in the file before the start of the table that usually provides metadata or other information).
-
 """
 
 # %%

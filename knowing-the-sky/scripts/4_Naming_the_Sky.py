@@ -2,7 +2,7 @@
 # jupyter:
 #   jupytext:
 #     cell_markers: '"""'
-#     comment_magics: false
+#     comment_magics: true
 #     text_representation:
 #       extension: .py
 #       format_name: percent

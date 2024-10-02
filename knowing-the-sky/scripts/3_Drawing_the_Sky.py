@@ -2,7 +2,7 @@
 # jupyter:
 #   jupytext:
 #     cell_markers: '"""'
-#     comment_magics: false
+#     comment_magics: true
 #     text_representation:
 #       extension: .py
 #       format_name: percent
@@ -35,7 +35,7 @@ import pandas as pd
 
 pd.set_option('display.min_rows', 100)
 pd.set_option('display.max_rows', 100)
-%matplotlib qt
+# %matplotlib qt
 
 # %% [markdown]
 """
@@ -230,7 +230,7 @@ solar_solstices = sunrises.loc[solstice_indices]
 # you can use it to correctly align different chunks of data to match one another.
 # better yet, matplotlib is aware of datetimes, so we can put dates right on this axis.
 # it will automatically select ticks that will work for both time series.
-%matplotlib qt
+# %matplotlib qt
 # use a black line for lunar azimuth
 plt.plot(moonrises['local'], moonrises['az'], c='black')
 # use a red line for solar azimuth

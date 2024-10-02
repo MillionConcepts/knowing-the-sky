@@ -1,4 +1,4 @@
-comment_magics = false
+comment_magics = true
 cell_markers = '"""'
 
 [formats]

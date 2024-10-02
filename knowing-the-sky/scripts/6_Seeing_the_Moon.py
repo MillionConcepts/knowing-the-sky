@@ -2,7 +2,7 @@
 # jupyter:
 #   jupytext:
 #     cell_markers: '"""'
-#     comment_magics: false
+#     comment_magics: true
 #     text_representation:
 #       extension: .py
 #       format_name: percent
@@ -693,7 +693,7 @@ file_index.to_csv("indices/lun_index.csv", index=None)
 # what we've got.
 
 import matplotlib.pyplot as plt
-%matplotlib qt
+# %matplotlib qt
 
 # This first plot is a simple time-vs.-illumination graph:
 plt.scatter(file_index['utc'], file_index['ill'], linewidth=2)
@@ -767,7 +767,7 @@ plt.imshow(rad, cmap='Greys_r')
 # %%
 # Similarly, it might also be good to look at images the algorithm 
 # didn't find a Moon in at all. Were those correct or incorrect
-# nondetections?
+# # nondetections?
 invalid = pipeline_results.loc[pipeline_results['error'].notna()]
 badrow = invalid.sample().iloc[0]
 badrad = Dataset(LUN_FOLDER / badrow['name']).variables['radiance'][:]
